@@ -1,0 +1,36 @@
+/* Estilos Universales */
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+
+/* Estilos BODY */
+.body{
+    background-color: none;
+}
+
+/* Estilos HEADER */
+.header{
+    background-color: green;
+}
+
+/* Estilos MAIN */
+.main{
+    background-color: red;
+}
+
+.bienvenida{
+    background-image: url(../assets/portada.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* Estilos FOOTER */
+.footer{
+    background-color: black;
+    color: aqua;
+}
+
+/* https://es.wix.com/website-template/view/html/2226?originUrl=https%3A%2F%2Fes.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fonline-store%2Fpets-animals-ecom&tpClick=view_button&esi=a2598910-ee0b-4a80-922b-1b7cd20514aa
+https://es.wix.com/website-template/view/html/2331?originUrl=https%3A%2F%2Fes.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fonline-store%2Fpets-animals-ecom&tpClick=view_button&esi=4b141b03-9be8-46bc-b192-67a0c726dcd2 */
