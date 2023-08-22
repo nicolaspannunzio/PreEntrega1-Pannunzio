@@ -17,11 +17,29 @@
 
 /* Estilos MAIN */
 .main{
-    background-color: red;
+    background-color: rgb(2, 78, 91);
 }
 
 .bienvenida{
     background-image: url(../assets/portada.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.tienda{
+    background-image: url(../assets/tiendaArticulos.avif);
+    background-position: center;
+    background-size: cover;
+}
+
+.Nuevos_Productos{
+    background-image: url(../assets/mascotasNuevos.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.contacto{
+    background-image: url(../assets/contacto.jpg);
     background-position: center;
     background-size: cover;
 }
