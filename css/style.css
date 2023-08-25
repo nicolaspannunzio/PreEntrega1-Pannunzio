@@ -30,12 +30,7 @@
     background-image: url(../assets/tiendaArticulos.avif);
     background-position: center;
     background-size: cover;
-}
-
-.Nuevos_Productos{
-    background-image: url(../assets/mascotasNuevos.jpg);
-    background-position: center;
-    background-size: cover;
+    height: 50vh;
 }
 
 .contacto{
@@ -45,10 +40,28 @@
 }
 
 /* Estilos FOOTER */
-.footer{
-    background-color: black;
-    color: aqua;
+
+#footer{
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+  background-color: #063a65;
+  margin-top: 20px;
+  color: #fafafa !important;
+  font-weight: bold !important; 
 }
+  #footer .iconos{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.container-footer{
+  word-wrap: break-word; }
 
 /* https://es.wix.com/website-template/view/html/2226?originUrl=https%3A%2F%2Fes.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fonline-store%2Fpets-animals-ecom&tpClick=view_button&esi=a2598910-ee0b-4a80-922b-1b7cd20514aa
 https://es.wix.com/website-template/view/html/2331?originUrl=https%3A%2F%2Fes.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fonline-store%2Fpets-animals-ecom&tpClick=view_button&esi=4b141b03-9be8-46bc-b192-67a0c726dcd2 */
