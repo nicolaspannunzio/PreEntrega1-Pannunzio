@@ -7,21 +7,27 @@ alert("¡Bienvenidxs a nuestra tienda de mascotas, M&T!");
 let usuario = prompt("Hola! ¿Tienes un usuario registrado?");
 let nuevoUsuario = "";
 
-if (usuario.toLowerCase() === "si") {  // Convertimos a minúsculas para hacer la comparación insensible a mayúsculas
-    console.log("Ok!");
+if (usuario.toLowerCase() === "si") {
+    console.log("Ok. El usuario está registrado");
 
 } else if (usuario.toLowerCase() === "no") {
+
     let registrarte = prompt("Ok, ¿quieres registrarte?");
 
     if (registrarte.toLowerCase() === "si") {  
+        
         nuevoUsuario = prompt("Por favor, elige tu nombre de usuario. Debe tener al menos 8 caracteres");
+        alert("Tu nuevo usuario, está registrado como " + nuevoUsuario);
+        console.log("Registro de nuevo usuario: " + nuevoUsuario);
+
         if (nuevoUsuario.length >= 8) {
             alert("Tu usuario ha sido registrado exitosamente como: " + nuevoUsuario);
         } else {
             alert("El nombre de usuario debe tener al menos 8 caracteres. Inténtalo de nuevo");
         }
+
     } else {
-        alert("Entendido, no te registrarás por ahora.");
+        alert("Entendido, no te registrarás por ahora. ¡Que tengas un excelente día!");
     }
 }
 
@@ -33,7 +39,7 @@ let compra = prompt("¿Te gustaría realizar una compra en nuestra tienda M&T? (
 
 function reIntentoDeCompra (){
 if (compra.toLowerCase() === "si"){
-    alert("Excelente!");
+    alert("Excelente! Empecemos eligiendo el / los producto /s que necesites");
     
     let tipoDeCompra;
 
@@ -49,8 +55,10 @@ if (compra.toLowerCase() === "si"){
         
             if (accesorioP === "collar") {
                  alert("Has elegido un collar.");
+                 console.log("El tipo de compra es Perros, y el accesorio seleccionado, es collar.");
             } else if (accesorioP === "cucha") {
                  alert("Has elegido una cucha.");
+                 console.log("El tipo de compra es Perros, y el accesorio seleccionado, es una cucha.");
             } else {
             alert("Opción inválida para accesorios.");
             }
@@ -64,8 +72,10 @@ if (compra.toLowerCase() === "si"){
         
             if (accesorioG === "piedritas sanitarias") {
                  alert("Has elegido piedritas sanitarias.");
+                 console.log("El tipo de compra es Gatos, y el accesorio seleccionado, es piedritas sanitarias.");
             } else if (accesorioG === "shampoo") {
                  alert("Has elegido un shampoo.");
+                 console.log("El tipo de compra es Gatos, y el accesorio seleccionado, es un shampoo.");
             } else {
             alert("Opción inválida para accesorios.");
             }
@@ -79,10 +89,13 @@ if (compra.toLowerCase() === "si"){
         
             if (accesorioNP === "balanceado para perros") {
                  alert("Has elegido balanceado para perros.");
+                 console.log("El tipo de compra es nuevos productos, y el accesorio seleccionado, es balanceado para perros.");
             } else if (accesorioNP === "balanceados para gatos") {
                  alert("Has elegido un balanceados para gatos.");
+                 console.log("El tipo de compra es nuevos productos, y el accesorio seleccionado, es balanceado para gatos.");
             } else if (accesorioNP === "juguetes") {
                 alert("Has elegido juguetes.");
+                console.log("El tipo de compra es nuevos productos, y el accesorio seleccionado, es juguetes.");
             } else {
             alert("Opción inválida para accesorios.");
             }
@@ -95,7 +108,7 @@ if (compra.toLowerCase() === "si"){
     } 
 
 } else if (compra.toLowerCase() === "no"){
-    alert("De acuerdo, te esperamos en tu próxima visita");
+    alert("De acuerdo, te esperamos en tu próxima visita.");
 
 } else if (compra === ""){
     prompt("Inténtalo de nuevo. Dinos por favor: si o no");
@@ -106,13 +119,13 @@ if (compra.toLowerCase() === "si"){
         reIntentoDeCompra();
     }
 } 
-compra = prompt("¿Te gustaría realizar otra en nuestra tienda M&T? (si / no)");
+/* compra = prompt("¿Te gustaría realizar otra en nuestra tienda M&T? (si / no)");
 
     if (compra === "si") {
     reIntentoDeCompra ()
     } else {
-    alert("De acuerdo, te esperamos en tu próxima visita");
-}
+    alert("De acuerdo, te esperamos en tu próxima visita.");
+} */
 }
 reIntentoDeCompra ();
 
@@ -124,31 +137,37 @@ reIntentoDeCompra ();
 let numDeArticulos = +prompt("Cuantos artículos deseas llevar? Puedes elegir entre 1 y 5 unidades por compra");
 
 if (numDeArticulos < 6 && numDeArticulos !== 0) {
+    alert("Has comprado " + numDeArticulos + " artículos. Gracias por tu compra.!");
     console.log("Has comprado " + numDeArticulos + " artículos. Gracias!");
 } else {
+    alert("Operación inválida, vuelve a intentarlo.");
     console.log("Operación inválida, vuelve a intentarlo.");
 }
 
-let retiroOenvio = prompt("Por favor, indicanos tu preferencia para recibir tu compra: Local / Envio ");
+let retiroOenvio = prompt("Por favor, indicanos la preferencia para entregarte tu compra: Local / Envio");
+
 while (retiroOenvio.toLowerCase() !== "local" && retiroOenvio.toLowerCase() !== "envio"){
     alert("Tu respuesta no es válida");
     retiroOenvio = prompt("Por favor, reiterá tu respuesta: Local o Envio");
-    console.log("Ok, tu elección es " + retiroOenvio);
+    console.log("Ok, tu elección es: " + retiroOenvio);
 }
 
 let formaDePago = prompt("¿Cómo quisieras abonar tu compra? Puedes elegir entre: efectivo o tarjeta de crédito");
 
 let tipoDePago;
+
 for (let i = 3; i > 0; i--) {
     tipoDePago = prompt("¿Cómo quisieras abonar tu compra? Puedes elegir entre: efectivo o tarjeta de crédito").toLowerCase();
     
     switch (tipoDePago.toLowerCase()){
     case "efectivo":
         alert("Tu medio de pago elegido es: Efectivo");
+        console.log("Tu medio de pago elegido es Efectivo");
         i = 0;
         break;
     case "tarjeta de credito":
         alert("Tu medio de pago elegido es: Tarjeta de credito");
+        console.log("Tu medio de pago elegido es con tarjeta de crédito");
         i = 0;
         break;
     default:
@@ -157,4 +176,7 @@ for (let i = 3; i > 0; i--) {
 }
 }
 
-alert("¡¡Muchas gracias por elegir nuestra tienda M&T, esperamos volver a verte pronto!!")
+alert("¡¡Muchas gracias por elegir nuestra tienda M&T, esperamos volver a verte pronto!!");
+
+/* Aclaración:
+Hay muchos console.log a lo largo del código, están puestos con el objetivo de ver un resumen del simulador. */
