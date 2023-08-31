@@ -9,19 +9,27 @@ let nuevoUsuario = "";
 
 if (usuario.toLowerCase() === "si") {
     console.log("Ok. El usuario está registrado");
+    let compra = prompt("¿Te gustaría realizar una compra en nuestra tienda M&T? (si / no)");
+    reIntentoDeCompra(compra);
 
 } else if (usuario.toLowerCase() === "no") {
+    registrase ();
+}
 
+function registrase (){
     let registrarte = prompt("Ok, ¿quieres registrarte?");
 
     if (registrarte.toLowerCase() === "si") {  
         
         nuevoUsuario = prompt("Por favor, elige tu nombre de usuario. Debe tener al menos 8 caracteres");
-        alert("Tu nuevo usuario, está registrado como " + nuevoUsuario);
+        //? alert("Tu nuevo usuario, está registrado como " + nuevoUsuario);
         console.log("Registro de nuevo usuario: " + nuevoUsuario);
 
         if (nuevoUsuario.length >= 8) {
             alert("Tu usuario ha sido registrado exitosamente como: " + nuevoUsuario);
+            let compra = prompt("¿Te gustaría realizar una compra en nuestra tienda M&T? (si / no)");
+            reIntentoDeCompra (compra);
+
         } else {
             alert("El nombre de usuario debe tener al menos 8 caracteres. Inténtalo de nuevo");
         }
@@ -32,12 +40,11 @@ if (usuario.toLowerCase() === "si") {
 }
 
 /* Se pregunta al usuario si desea realizar una compra. 
-Caso afirmativo, procedemos.. de lo contrario, fin del programa.
-Entonces preguntamos qué tipo de compra y, por último el articulo que desea llevar. */
+Caso afirmativo, procedemos y preguntamos qué tipo de compra. Por último el articulo que desea llevar. 
+.. de lo contrario, fin del programa */
 
-let compra = prompt("¿Te gustaría realizar una compra en nuestra tienda M&T? (si / no)");
 
-function reIntentoDeCompra (){
+function reIntentoDeCompra (compra){
 if (compra.toLowerCase() === "si"){
     alert("Excelente! Empecemos eligiendo el / los producto /s que necesites");
     
@@ -55,9 +62,11 @@ if (compra.toLowerCase() === "si"){
         
             if (accesorioP === "collar") {
                  alert("Has elegido un collar.");
+                 comprar();
                  console.log("El tipo de compra es Perros, y el accesorio seleccionado, es collar.");
             } else if (accesorioP === "cucha") {
                  alert("Has elegido una cucha.");
+                 comprar();
                  console.log("El tipo de compra es Perros, y el accesorio seleccionado, es una cucha.");
             } else {
             alert("Opción inválida para accesorios.");
@@ -72,9 +81,11 @@ if (compra.toLowerCase() === "si"){
         
             if (accesorioG === "piedritas sanitarias") {
                  alert("Has elegido piedritas sanitarias.");
+                 comprar();
                  console.log("El tipo de compra es Gatos, y el accesorio seleccionado, es piedritas sanitarias.");
             } else if (accesorioG === "shampoo") {
                  alert("Has elegido un shampoo.");
+                 comprar();
                  console.log("El tipo de compra es Gatos, y el accesorio seleccionado, es un shampoo.");
             } else {
             alert("Opción inválida para accesorios.");
@@ -89,12 +100,15 @@ if (compra.toLowerCase() === "si"){
         
             if (accesorioNP === "balanceado para perros") {
                  alert("Has elegido balanceado para perros.");
+                 comprar();
                  console.log("El tipo de compra es nuevos productos, y el accesorio seleccionado, es balanceado para perros.");
             } else if (accesorioNP === "balanceados para gatos") {
                  alert("Has elegido un balanceados para gatos.");
+                 comprar();
                  console.log("El tipo de compra es nuevos productos, y el accesorio seleccionado, es balanceado para gatos.");
             } else if (accesorioNP === "juguetes") {
                 alert("Has elegido juguetes.");
+                comprar();
                 console.log("El tipo de compra es nuevos productos, y el accesorio seleccionado, es juguetes.");
             } else {
             alert("Opción inválida para accesorios.");
@@ -127,13 +141,14 @@ if (compra.toLowerCase() === "si"){
     alert("De acuerdo, te esperamos en tu próxima visita.");
 } */
 }
-reIntentoDeCompra ();
+// reIntentoDeCompra ();
 
 /* En base a las preferencias que nos dio el usuario, le vamos a hacer tres últimas peticiones:
 1° conocer la cantidad de artículos que desea llevar,
 2° preguntarle, si prefiere un envio a domicilio o retira en nuestros locales,
 3° por último, conocer el medio pago de su preferencia. */
 
+function comprar(){
 let numDeArticulos = +prompt("Cuantos artículos deseas llevar? Puedes elegir entre 1 y 5 unidades por compra");
 
 if (numDeArticulos < 6 && numDeArticulos !== 0) {
@@ -173,10 +188,10 @@ for (let i = 3; i > 0; i--) {
     default:
         alert("Ingresa nuevamente, tu medio de pago elegido");
         break;
-}
+    }
 }
 
-alert("¡¡Muchas gracias por elegir nuestra tienda M&T, esperamos volver a verte pronto!!");
-
+    alert("¡¡Muchas gracias por elegir nuestra tienda M&T, esperamos volver a verte pronto!!");
+}
 /* Aclaración:
-Hay muchos console.log a lo largo del código, están puestos con el objetivo de ver un resumen del simulador. */
+Los console.log a lo largo del código están puestos con el objetivo de ver un resumen del simulador. */
