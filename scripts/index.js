@@ -23,19 +23,22 @@ function registrase (){
         
         nuevoUsuario = prompt("Por favor, elige tu nombre de usuario. Debe tener al menos 8 caracteres");
         //? alert("Tu nuevo usuario, está registrado como " + nuevoUsuario);
-        console.log("Registro de nuevo usuario: " + nuevoUsuario);
 
         if (nuevoUsuario.length >= 8) {
             alert("Tu usuario ha sido registrado exitosamente como: " + nuevoUsuario);
+            console.log("Registro de nuevo usuario: " + nuevoUsuario);
             let compra = prompt("¿Te gustaría realizar una compra en nuestra tienda M&T? (si / no)");
             reIntentoDeCompra (compra);
 
         } else {
             alert("El nombre de usuario debe tener al menos 8 caracteres. Inténtalo de nuevo");
+            console.log("Registro de usuario incorrecto: " + nuevoUsuario);
+            registrase ();
         }
 
     } else {
         alert("Entendido, no te registrarás por ahora. ¡Que tengas un excelente día!");
+        console.log("El usuario, no desea registrarse por el momento.");
     }
 }
 
@@ -70,6 +73,7 @@ if (compra.toLowerCase() === "si"){
                  console.log("El tipo de compra es Perros, y el accesorio seleccionado, es una cucha.");
             } else {
             alert("Opción inválida para accesorios.");
+            reIntentoDeCompra (compra);
             }
             break;
             
@@ -89,6 +93,7 @@ if (compra.toLowerCase() === "si"){
                  console.log("El tipo de compra es Gatos, y el accesorio seleccionado, es un shampoo.");
             } else {
             alert("Opción inválida para accesorios.");
+            reIntentoDeCompra (compra);
             }
             break;
 
@@ -112,11 +117,13 @@ if (compra.toLowerCase() === "si"){
                 console.log("El tipo de compra es nuevos productos, y el accesorio seleccionado, es juguetes.");
             } else {
             alert("Opción inválida para accesorios.");
+            reIntentoDeCompra (compra);
             }
             break;
 
         default:
             alert("Compra inválida. Vuelve a intentarlo");
+            reIntentoDeCompra (compra);
             break;
         }
     } 
@@ -149,6 +156,7 @@ if (compra.toLowerCase() === "si"){
 3° por último, conocer el medio pago de su preferencia. */
 
 function comprar(){
+
 let numDeArticulos = +prompt("Cuantos artículos deseas llevar? Puedes elegir entre 1 y 5 unidades por compra");
 
 if (numDeArticulos < 6 && numDeArticulos !== 0) {
@@ -156,6 +164,7 @@ if (numDeArticulos < 6 && numDeArticulos !== 0) {
     console.log("Has comprado " + numDeArticulos + " artículos. Gracias!");
 } else {
     alert("Operación inválida, vuelve a intentarlo.");
+    comprar ();
     console.log("Operación inválida, vuelve a intentarlo.");
 }
 
@@ -167,22 +176,22 @@ while (retiroOenvio.toLowerCase() !== "local" && retiroOenvio.toLowerCase() !== 
     console.log("Ok, tu elección es: " + retiroOenvio);
 }
 
-let formaDePago = prompt("¿Cómo quisieras abonar tu compra? Puedes elegir entre: efectivo o tarjeta de crédito");
+//? let formaDePago = prompt("¿Cómo quisieras abonar tu compra? Puedes elegir entre: efectivo o tarjeta de crédito");
 
 let tipoDePago;
 
 for (let i = 3; i > 0; i--) {
-    tipoDePago = prompt("¿Cómo quisieras abonar tu compra? Puedes elegir entre: efectivo o tarjeta de crédito").toLowerCase();
+    tipoDePago = prompt("¿Cómo quisieras abonar tu compra? Puedes elegir entre: efectivo o tarjeta de credito").toLowerCase();
     
     switch (tipoDePago.toLowerCase()){
     case "efectivo":
-        alert("Tu medio de pago elegido es: Efectivo");
-        console.log("Tu medio de pago elegido es Efectivo");
+        alert("Tu medio de pago elegido es: efectivo");
+        console.log("Tu medio de pago elegido es efectivo");
         i = 0;
         break;
     case "tarjeta de credito":
-        alert("Tu medio de pago elegido es: Tarjeta de credito");
-        console.log("Tu medio de pago elegido es con tarjeta de crédito");
+        alert("Tu medio de pago elegido es: tarjeta de credito");
+        console.log("Tu medio de pago elegido es con tarjeta de credito");
         i = 0;
         break;
     default:
