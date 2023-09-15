@@ -1,8 +1,18 @@
-/* Saludo de bienvenida */
+//? SIMULADOR INTERACTIVO - 1° pre-entrega JS
+
+/* Inicio del Simulador. Saludo de bienvenida
+Comprobando si el usuario está registrado o no.
+Se pregunta al usuario si desea realizar una compra. 
+Caso afirmativo, procedemos y preguntamos qué tipo de compra. Por último el articulo que desea llevar. 
+.. de lo contrario, fin del programa.
+En base a las preferencias que nos dio el usuario, le vamos a hacer tres últimas peticiones:
+1° conocer la cantidad de artículos que desea llevar,
+2° preguntarle, si prefiere un envio a domicilio o retira en nuestros locales,
+3° por último, conocer el medio pago de su preferencia.
+Aclaración:
+Los console.log a lo largo del código están puestos con el objetivo de ver un resumen del simulador. */
 
 alert("¡Bienvenidxs a nuestra tienda de mascotas, M&T!");
-
-/* Inicio del Simulador. Comprobando si el usuario está registrado o no. */
 
 let usuario = prompt("Hola! ¿Tienes un usuario registrado?");
 let nuevoUsuario = "";
@@ -41,11 +51,6 @@ function registrase (){
         console.log("El usuario, no desea registrarse por el momento.");
     }
 }
-
-/* Se pregunta al usuario si desea realizar una compra. 
-Caso afirmativo, procedemos y preguntamos qué tipo de compra. Por último el articulo que desea llevar. 
-.. de lo contrario, fin del programa */
-
 
 function reIntentoDeCompra (compra){
 if (compra.toLowerCase() === "si"){
@@ -150,11 +155,6 @@ if (compra.toLowerCase() === "si"){
 }
 // reIntentoDeCompra ();
 
-/* En base a las preferencias que nos dio el usuario, le vamos a hacer tres últimas peticiones:
-1° conocer la cantidad de artículos que desea llevar,
-2° preguntarle, si prefiere un envio a domicilio o retira en nuestros locales,
-3° por último, conocer el medio pago de su preferencia. */
-
 function comprar(){
 
 let numDeArticulos = +prompt("Cuantos artículos deseas llevar? Puedes elegir entre 1 y 5 unidades por compra");
@@ -202,5 +202,3 @@ for (let i = 3; i > 0; i--) {
 
     alert("¡¡Muchas gracias por elegir nuestra tienda M&T, esperamos volver a verte pronto!!");
 }
-/* Aclaración:
-Los console.log a lo largo del código están puestos con el objetivo de ver un resumen del simulador. */
