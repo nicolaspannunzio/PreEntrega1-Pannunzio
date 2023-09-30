@@ -7,70 +7,34 @@
 
 /* Estilos BODY */
 .body{
-    background-color: none;
+    background-color: rgb(232, 233, 232);
 }
 
-/* Estilos HEADER */
-.header{
-    background-color: green;
+#bienvenida{
+  margin-top: 70px;
 }
 
-h1 {
-   font-family:  'Acme', sans-serif;
+h1{
+  margin-top: 30px;
+  margin-bottom: 25px;
 }
 
-.parrafobienvenida{
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-size: 2 em;
-}
-
-/* Estilos MAIN */
-.main{
-    background-color: rgb(2, 78, 91);
-}
-
-.bienvenida{
-    background-image: url(../assets/portada.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-.tienda{
-    background-image: url(../assets/tiendaArticulos.avif);
-    background-position: center;
-    background-size: cover;
-    height: 50vh;
-}
-
-.contacto{
-    background-image: url(../assets/contacto.jpg);
-    background-position: center;
-    background-size: cover;
+#contenedor-productos{
+  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 /* Estilos FOOTER */
-
 #footer{
   display: flex;
-  flex-direction: column;
   max-width: 100%;
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 1px;
+  padding: 10px;
   background-color: #063a65;
-  margin-top: 20px;
   color: #fafafa !important;
   font-weight: bold !important; 
 }
-  #footer .iconos{
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-}
-
-.container-footer{
-  word-wrap: break-word; }
-
-/* https://es.wix.com/website-template/view/html/2226?originUrl=https%3A%2F%2Fes.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fonline-store%2Fpets-animals-ecom&tpClick=view_button&esi=a2598910-ee0b-4a80-922b-1b7cd20514aa
-https://es.wix.com/website-template/view/html/2331?originUrl=https%3A%2F%2Fes.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fonline-store%2Fpets-animals-ecom&tpClick=view_button&esi=4b141b03-9be8-46bc-b192-67a0c726dcd2 */

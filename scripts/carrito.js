@@ -1,6 +1,6 @@
 // Segunda Pre-entrega - JS
 //? Estructura, variables y objetos 
-// Simulador I: //? "Carrito de Compras"
+// Simulador II: //? "Carrito de Compras II"
 
 const productos = [
     { nombre: "correa extensible",      precio : 1300  },
@@ -12,7 +12,7 @@ const productos = [
     { nombre: "alimento seco",          precio : 8850  },
     { nombre: "cucha",                  precio : 6740  },
     { nombre: "pipeta",                 precio : 2810  },
-    { nombre: "bolso transportador",    precio : 18550 }
+    { nombre: "bolso transportador",    precio : 11570 }
 ]
 
 let carritoDeCompras = [];
@@ -20,84 +20,41 @@ let carritoDeCompras = [];
 let seleccion = prompt("Bienvenidxs! Deseas comprar algún producto en nuestra tienda M&T? si / no");
 console.log("El usuario respondió " + seleccion);
 
-while (seleccion !== "si" && seleccion !== "no"){
-    alert("Por favor, ingresá una respuesta válida: si / no");
-    seleccion = prompt("Deseas comprar algún producto en nuestra tienda M&T? si / no");
-    console.log("La nueva respuesta del usuario es " + seleccion);
+function mostrarProductos() {
+    alert("Esta es nuestra lista de productos:\n" + productos.map(producto => `${producto.nombre} - $${producto.precio}`).join("\n"));
 }
 
-if (seleccion === "si"){
-    alert("Excelente! Esta es nuestra lista de productos:");
-    let todosMisProductos = productos.map((producto) => producto.nombre + " " + "$ " + producto.precio);
-    alert(todosMisProductos.join(" - "));
-    console.log(todosMisProductos.join(" - "));
-} else if (seleccion === "no"){
-    alert("Te esperamos en tu próxima visita. ¡Que tengas un buen día!");
-    console.log("El usuario, decidió no comprar ningún producto.");
+function obtenerSeleccion (){
+    seleccion = prompt("Deseas comprar algún producto en nuestra tienda M&T? si / no").toLowerCase();
+
+    while (seleccion !== "si" && seleccion !== "no"){
+        alert("Por favor, ingresá una respuesta válida: si / no");
+        seleccion = prompt("Deseas comprar algún producto en nuestra tienda M&T? si / no").toLowerCase();
+    }
+    return seleccion;
 }
 
-while (seleccion !== "no"){
-    let producto = prompt("Agregá un producto a tu carrito");
-    console.log("El nuevo producto agredado es " + producto);
-    let precio = 0;
+function obtenerProductoYPrecio (){
+    const producto = prompt("Agrega un producto a tu carrito");
+    const productoEncontrado = productos.find(p => p.nombre.toLowerCase() === producto.toLowerCase());
 
-    if (producto == "correa extensible" || producto == "hueso de goma" || producto == "comedero" || producto == "collar" || producto == "piedras sanitarias" || producto == "rodillo adhesivo" || producto == "alimento seco"|| producto == "cucha" || producto == "pipeta" || producto == "bolso transportador"){
-        switch(producto){
-            case "correa extensible":
-                precio = 1300
-                break;
-            case "hueso de goma":
-                precio = 920
-                break;
-            case "comedero":
-                precio = 1150
-                break;
-            case "collar":
-                precio = 600
-                break;
-            case "piedras sanitarias":
-                precio = 450
-                break;
-            case "rodillo adhesivo":
-                precio = 1890
-                break;
-            case "alimento seco":
-                precio = 8850
-                break;
-            case "cucha":
-                precio = 6740
-                break;
-            case "pipeta":
-                precio = 2810
-                break;
-            case "bolso transportador":
-                precio = 38550
-                break;
-            default:
-                break;         
+    if (productoEncontrado){
+        const unidades = +(prompt(`¿Cuantas unidades del ${producto} quieres llevar?`));
+
+        if (!IsNaN(unidades) && unidades > 0){
+            return {producto: productoEncontrado, unidades};
         }
-
-    let unidades = +(prompt("Cuantas unidades del " + producto + " quieres llevar?"));
-    console.log("El usuario ha elegido " + producto + " y llevará " + unidades + " unidades");
-
-    carritoDeCompras.push({producto, unidades, precio});
-    console.log(carritoDeCompras);
-    } else {
-        alert("El producto ingresado, no es válido");
-        console.log("El producto ingresado, no es válido");
     }
 
-    seleccion = prompt("Querés agregar un nuevo producto? si / no");
-
-    while(seleccion === "no"){
-        alert("¡Gracias por tu compra!");
-        carritoDeCompras.forEach((carritoFinal) => {
-            console.log(`producto elegido: ${carritoFinal.producto} - unidades: ${carritoFinal.unidades} - El total a pagar por producto es ${carritoFinal.unidades * carritoFinal.precio}`);
-        })
-    break;
-    }
+    alert("El producto ingresado no es válido.");
+    return null;
 }
 
-const total = carritoDeCompras.reduce((acc, i) => acc + i.precio * i.unidades, 0);
-alert(`El total a pagar por tu compra es $ ${total}`);
-console.log(`El total a pagar por tu compra es $ ${total}`);
+function agregarAlCarrito (producto, unidades){
+    carritoDeCompras.push({ producto: producto.nombre, unidades, precio: producto.precio});
+    console.log("Producto agregado al carrito:", producto.nombre, "Unidades:", unidades);
+}
+
+function mostrarCarrito(){
+    console.log("Carito de compras:");
+}
