@@ -9,7 +9,7 @@ const productos = [
     nombre: "Hueso de goma",          
     precio : 900,      
     unidad: 0,     
-    imagen: "../assets/ImgProductos/huesodegoma.jfif"},
+    imagen: "../assets/ImgProductos/huesodegoma.webp"},
 
     {id: 3,    
     nombre: "Comedero",               
@@ -33,29 +33,29 @@ const productos = [
     nombre: "Alimento balanceado",      
     precio : 8850,     
     unidad: 0,     
-    imagen: "../assets/ImgProductos/balanceado.jpg"},
+    imagen: "../assets/ImgProductos/balanceado.webp"},
         
     {id: 7,    
     nombre: "Pipeta",          
     precio : 2810,      
     unidad: 0,     
-    imagen: "../assets/ImgProductos/pipeta.jpg"},
+    imagen: "../assets/ImgProductos/pipeta.webp"},
     
     {id: 8,    
     nombre: "Bolso transportador",               
     precio : 11570,     
     unidad: 0,     
-    imagen: "../assets/ImgProductos/bolsotransportador.jpg"},
+    imagen: "../assets/ImgProductos/bolsotransportador.webp"},
         
     {id: 9,    
     nombre: "Cucha",                 
     precio : 6740,      
     unidad: 0,     
-    imagen: "../assets/ImgProductos/cucha.jfif"},
+    imagen: "../assets/ImgProductos/cucha.webp"},
         
     {id: 10,    
     nombre: "Rodillo adhesivo",     
     precio : 1890,      
     unidad: 0,     
-    imagen: "../assets/ImgProductos/rodillo.jpg"},
+    imagen: "../assets/ImgProductos/rodillo.webp"},
 ]
