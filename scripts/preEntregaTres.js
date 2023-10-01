@@ -63,7 +63,7 @@ const mostrarProductos = (productos) =>{
         cardProducto.innerHTML = "";
         cardProducto.setAttribute("id", "tarjeta-producto");
         cardProducto.innerHTML = `<div class="card" style="width: 18rem;">
-                                        <img src="${producto.imagen}" class="card-img-top" alt="img-producto">
+                                        <img src="./${producto.imagen}" class="card-img-top" alt="img-producto">
                                         <div class="card-body">
                                         <h5 class="card-title">${producto.nombre}</h5>
                                         <p class="card-text">$${producto.precio}</p>
