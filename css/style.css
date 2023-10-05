@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Josefin+Sans:ital,wght@1,300&display=swap');
+
 /* Estilos Universales */
 *{
    margin: 0;
@@ -7,16 +9,18 @@
 
 /* Estilos BODY */
 .body{
-    background-color: rgb(232, 233, 232);
-}
-
-#bienvenida{
-  margin-top: 70px;
+    background-color: rgb(7, 7, 7);
 }
 
 h1{
   margin-top: 30px;
   margin-bottom: 25px;
+  color: white;
+  font-family: Cinzel;
+}
+
+main{
+  font-family: Josefin Sans;
 }
 
 #contenedor-productos{
@@ -28,13 +32,66 @@ h1{
   gap: 10px;
 }
 
-/* Estilos FOOTER */
-#footer{
-  display: flex;
-  max-width: 100%;
+.card-body{
+  background-color: rgb(58, 28, 72);
+  color: white;
+  text-align: center;
+  border: solid 2px rgb(235, 252, 81);
+  border-radius: 6px;
+}
+
+.card{
+  border: solid 1.5px rgb(155, 225, 233);
+}
+
+table{
+  background-color: #fff;
   width: 100%;
-  padding: 10px;
-  background-color: #063a65;
-  color: #fafafa !important;
-  font-weight: bold !important; 
+  border-collapse: collapse;
+}
+th, td{
+  border: solid 1px black;
+  padding: 15px;
+  
+}
+thead{
+  border-bottom: solid 3px black !important;
+  color: white; 
+}
+
+button{
+  border: 0;
+  background-image: linear-gradient(
+    150deg,
+    #9500ff,
+    #09f,
+    #00DDFF
+  );
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  font-size: 15px;
+  padding: 4px;
+  cursor: pointer;
+  transition: .3s;
+  margin: 0 auto;
+}
+
+button span{
+  background-color: #5a721c74;
+  padding: 16px 24px;
+  border-radius: 6px;
+  transition: .3s;
+}
+
+button:hover span{
+  background: none;
+}
+
+button:active{
+  transform: scale(0.9);
+}
+
+svg{
+  color: white;
 }

@@ -20,13 +20,10 @@ const inicioDeSesion = () =>{
 
     ingresoDeUsuario = document.createElement("div");
     ingresoDeUsuario.className = "text-white";
-    ingresoDeUsuario.innerHTML = `  <div>
-                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Nombre: ${nombreyapellido}</label>
-                                    </div>
-                                    <div>
-                                        <label for="colFormLabelSm"
-                                        class="col-sm-2 col-form-label col-form-label-sm">Usuario: ${usuario}</label>
-                                    </div> `;
+    ingresoDeUsuario.innerHTML = `<div>
+                                    <span>Nombre: ${nombreyapellido}</span><br>
+                                    <span>Usuario: ${usuario}</span>
+                                  </div>`;
     datos.append(ingresoDeUsuario);
 
     botonI.disabled = true;
@@ -40,7 +37,12 @@ function cerrarSesion (ingresoDeUsuario){
     botonI.disabled = false;
     botonC.disabled = true;
     ingresoDeUsuario.innerHTML = "";
-    alert ("Has cerrado sesión ¡Gracias por visitarnos!")
+    Swal.fire({
+        title: '¡Has cerrado sesión correctamente!',
+        icon: 'success',
+        confirmButtonText: 'ok',
+        width: '22em',
+    });
 }
 
 form.addEventListener("submit", (e) =>{
@@ -75,7 +77,14 @@ const mostrarProductos = (productos) =>{
         contenedorProductos.appendChild(cardProducto);
         const btnComprar = document.getElementById(`Agregar-${producto.id}`);
         btnComprar.addEventListener("click", (e) =>{
-                agregarAlCarrito(producto.id)
+                agregarAlCarrito(producto.id);
+            Toastify({
+                    text: `Agregaste ${producto.nombre}`,
+                    duration: 3000,
+                    style: {
+                        background: "green"
+                    }
+                    }).showToast();
         });
     })
 }
@@ -98,48 +107,42 @@ const agregarAlCarrito = (id) =>{
 }
 
 const mostrarCarrito = () => {
-	const contenedorCarrito = document.getElementById("carrito");
+	const contenedorCarrito = document.getElementById("carritoBody");
 	contenedorCarrito.innerHTML = "";
-	if (carrito.length > 0) {
-		const productsCart = document.createElement("div");
-		productsCart.classList.add("productsCart");
-		contenedorCarrito.appendChild(productsCart);
-		const contenedorTotal = document.createElement("p");
-		actualizarTotal(contenedorTotal);
-		contenedorCarrito.appendChild(contenedorTotal);
+	
+    if (carrito.length > 0) {
+		const contenedorTotal = document.createElement("tr");
+        contenedorTotal.innerHTML= `<td colspan = "5" class="text-center"><h5><strong>El total de tu compra es de $${calcularTotal()}</strong></h5></td>`;
+
 		carrito.forEach((producto) => {
-			const sec = document.createElement("section");
-			sec.innerHTML = ` <table class="table table-hover table-bordered text-center">
-                                <thead>
-                                    <tr class="text-center">
-                                        <th scope="col">Id</th>
-                                        <th scope="col">Articulo</th>
-                                        <th scope="col">Unidades</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Sub-Total</th>
-                                        <th scope="col">Eliminar Producto</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">${producto.id}</th>
-                                        <td>${producto.nombre}</td>
-                                        <td>${producto.cantidad}</td>
-                                        <td>$${producto.precio}</td>
-                                        <td>$${producto.precio * producto.cantidad}</td>
-                                        <td><button id="eliminar-${producto.id}" class="btn btn-danger">Eliminar</button></td>
-                                    </tr>
-                                </tbody>
-                             </table> `;
+			const fila = document.createElement("tr");
+			fila.innerHTML = `  <tr>
+                                    <td>${producto.nombre}</td>
+                                    <td>${producto.cantidad}</td>
+                                    <td>$${producto.precio}</td>
+                                    <td>$${producto.precio * producto.cantidad}</td>
+                                    <td><button id="eliminar-${producto.id}" class="btn btn-danger">Eliminar</button></td>
+                                </tr> `;
             
-			productsCart.appendChild(sec);
+            contenedorCarrito.appendChild(fila);
+            contenedorCarrito.appendChild(contenedorTotal);
+
 			const boton = document.getElementById(`eliminar-${producto.id}`);
 			boton.addEventListener("click", () => {
 				eliminarProducto(producto.id);
+                Toastify({
+                    text: `Eliminaste ${producto.nombre}`,
+                    duration: 3000,
+                    position: "left",
+                    gravity: "bottom",
+                    style: {
+                        background: "red"
+                    }
+                    }).showToast();
 			});
 		});
 	} else {
-		contenedorCarrito.innerHTML = '<h5 class="empty">No hay productos</h5>';
+		contenedorCarrito.innerHTML = '<td colspan = "5" class="text-center"><h5><strong>No hay productos agregados al carrito</strong></h5></td>';
 	}
 };
 
@@ -149,10 +152,9 @@ const eliminarProducto = (id) => {
 	mostrarCarrito();
 };
 
-const actualizarTotal = (contenedor) => {
-	const total = carrito.reduce((acumulador, producto) => acumulador + (producto.precio * producto.cantidad), 0);
-	contenedor.innerHTML = `<h5>Total: $${total}</h5>`;
-};
+const calcularTotal = (contenedor) =>{
+    return carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+}
 
 mostrarProductos(productos);
 mostrarCarrito();
