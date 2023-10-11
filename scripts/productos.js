@@ -58,4 +58,16 @@ const productos = [
     precio : 1890,      
     unidad: 0,     
     imagen: "assets/ImgProductos/rodillo.webp"},
+
+    {id: 11,    
+    nombre: "Cepillo",                 
+    precio : 2300,      
+    unidad: 0,     
+    imagen: "assets/ImgProductos/cepillo.webp"},
+            
+    {id: 12,    
+    nombre: "Soga",     
+    precio : 1500,      
+    unidad: 0,     
+    imagen: "assets/ImgProductos/soga.webp"},
 ]

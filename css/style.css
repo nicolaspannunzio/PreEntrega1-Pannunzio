@@ -9,7 +9,7 @@
 
 /* Estilos BODY */
 .body{
-    background-color: rgb(7, 7, 7);
+    background-color: #0b0b0b;
 }
 
 h1{
@@ -17,6 +17,11 @@ h1{
   margin-bottom: 25px;
   color: white;
   font-family: Cinzel;
+  text-shadow: 2px 2px 4px rgba(104, 235, 23, 0.5);
+}
+
+#iniciosesion{
+  text-align: left;
 }
 
 main{
@@ -29,8 +34,7 @@ main{
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
-}
+  gap: 10px;}
 
 .card-body{
   background-color: rgb(58, 28, 72);
@@ -59,7 +63,7 @@ thead{
   color: white; 
 }
 
-button{
+#botonMagico{
   border: 0;
   background-image: linear-gradient(
     150deg,
@@ -70,17 +74,17 @@ button{
   border-radius: 8px;
   color: #fff;
   display: flex;
-  font-size: 15px;
-  padding: 4px;
+  font-size: 17px;
+  padding: 1px;
   cursor: pointer;
   transition: .3s;
   margin: 0 auto;
 }
 
-button span{
-  background-color: #5a721c74;
+button span, #botonMagico{
+  background-color: #17d4f569;
   padding: 16px 24px;
-  border-radius: 6px;
+  border-radius: 10px;
   transition: .3s;
 }
 
@@ -94,4 +98,31 @@ button:active{
 
 svg{
   color: white;
+}
+
+#contenedor-weather{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white
+}
+
+#contenedor {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+  grid-gap: 75px;
+}
+
+#caja1, #caja2, #caja3 {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 10%;
+}
+
+#icono-Animado{
+  margin-top: -20px;
+  gap: 10px;
 }

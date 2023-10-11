@@ -145,15 +145,7 @@ if (compra.toLowerCase() === "si"){
         reIntentoDeCompra();
     }
 } 
-/* compra = prompt("¿Te gustaría realizar otra en nuestra tienda M&T? (si / no)");
-
-    if (compra === "si") {
-    reIntentoDeCompra ()
-    } else {
-    alert("De acuerdo, te esperamos en tu próxima visita.");
-} */
 }
-// reIntentoDeCompra ();
 
 function comprar(){
 
@@ -199,6 +191,5 @@ for (let i = 3; i > 0; i--) {
         break;
     }
 }
-
     alert("¡¡Muchas gracias por elegir nuestra tienda M&T, esperamos volver a verte pronto!!");
 }

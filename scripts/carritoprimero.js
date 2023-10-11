@@ -1,6 +1,6 @@
 // Segunda Pre-entrega - JS
 //? Estructura, variables y objetos 
-// Simulador I: //? "Carrito de Compras"
+// Simulador I: //? "Carrito de Compras I"
 
 const productos = [
     { nombre: "correa extensible",      precio : 1300  },
